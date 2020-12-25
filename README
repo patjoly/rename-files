@@ -1,0 +1,18 @@
+rename-files - Batch rename files in bash
+
+	A bash script to rename a batch of files, optionally based on a regex subsitution pattern
+
+Contents:
+	RenameFiles.sh    Bash script to rename a batch of files
+	install           install file (only for Linux)
+	Todo              Module to-do list
+	README            this file
+
+Installation:
+	./install
+
+Requires:
+	Nothing in particular so far.
+
+Further Resources: 
+	None yet.
