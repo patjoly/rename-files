@@ -110,11 +110,13 @@ else
 	done < <(find . -maxdepth 1 -name '*' -type f -print0)
 fi
 
-# note that currently, the match regex is checked againts the fullname with path
-# I may or may not want to change that to just the basename without path in the future
+# Match on the name without the path
 if [ ! -z "$match"  ]; then
 	for i in "${!files[@]}"; do
-		if [[ ${files[$i]} =~ $match ]]; then
+		fname=${files[$i]}
+		name_nopath="${fname##*/}"
+
+		if [[ $name_nopath =~ $match ]]; then
 			tmp+=("${files[$i]}")
 		fi
 	done
