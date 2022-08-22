@@ -1,1 +1,1 @@
-su -c "cp RenameFiles.sh  /usr/local/bin"
+cp RenameFiles.sh  /usr/local/bin
