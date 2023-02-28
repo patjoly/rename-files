@@ -1,0 +1,23 @@
+Development Notes for RenameFiles.sh
+
+
+I haven't created any development notes so far. TODO: note a few key points here.
+
+
+Matches and replacement patterns
+	Filenames are replaced with a sed call.
+
+	Sometimes I am stumped that a pattern and captures don't work as expected.
+
+	To troubleshoot/debug, I could place a bunch of echo statements in the script, but before doing that, try to replicate using as simple string as example and pass it to sed, e.g.
+
+		str='A filename with 2  spaces in it.txt'
+		echo "$str" | sed -r "s/\s{2,2}(.*\.txt)/ - \1/"
+
+	Then, once I get the expected behaviour, try it out with a mock file and the script
+
+		touch "$str"
+		./RenameFiles.sh --match '\s{2,2}(.*\.txt)' --replace ' - \1'
+
+	Don't forget to call the script with a leading dot if we make any change to it. (Otherwise it calls the version installed.)
+

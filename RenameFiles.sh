@@ -147,7 +147,7 @@ for fname in "${files[@]}"; do
 		ext="${fname##*.}"
 		ext=".$ext"
 		base_nopath=`basename "$fname" "$ext"`
-	else 
+	else
 		ext=''
 		base_nopath=`basename "$fname"`
 	fi
@@ -160,7 +160,7 @@ for fname in "${files[@]}"; do
 
 	if [ ! -z "$replace" ]; then
 		base_nopathext="$base_nopath$ext"
-		replacedname=`echo $base_nopathext | sed -r "s/$match/$replace/"`
+		replacedname=`echo "$base_nopathext" | sed -r "s/$match/$replace/"`
 		newname="$dir/$replacedname"
 	fi
 
